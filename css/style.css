@@ -20,6 +20,16 @@
 .color-orange {
   color: #fa8601;
 }
+.bg__color{
+  position: absolute;
+  top: 0;
+  left: 0;
+  isolation: isolate;
+  z-index: 0;
+}
+.full{
+  height: 100vh;
+}
 section {
   max-width: 1350px;
   margin: auto;
@@ -66,158 +76,73 @@ section {
   }
 }
 /* navbar section  */
-.navbar {
+.navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
   max-width: 1100px;
-  height: 100px;
+  padding-block: 30px;
 }
-.navbar__menu__items,
-.navbar__menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  padding-inline-end: 50px;
+.navbar__logo{
+  min-width: 350px;
 }
-.navbar__menu__item,
-.active {
-  text-decoration: none;
-  text-transform: capitalize;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 15px;
-  font-weight: 700;
-  position: relative;
-  border-bottom: 4px #fa8601 solid;
-  padding-block: 10px;
-}
-.navbar__menu__item::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 40px;
-  width: 100%;
-  border-bottom: 9px #fff solid;
-  transition: all 1s linear;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 1s linear;
-  -ms-transition: all 1s linear;
-  -o-transition: all 1s linear;
-}
-.navbar__menu__item:hover::before {
-  width: 30%;
-}
-
-.active {
-  color: var(--color-orange);
-}
-.login__btn {
-  padding-inline: 35px;
-  padding-block: 10px;
-  background-color: #fa8601;
-  border-radius: 50px;
-  color: #fff;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
-  text-decoration: none;
-  text-transform: capitalize;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  position: relative;
-  transition: all 0.4s linear;
-  -webkit-transition: all 0.4s linear;
-  -moz-transition: all 0.4s linear;
-  -ms-transition: all 0.4s linear;
-  -o-transition: all 0.4s linear;
-}
-.login__btn:hover {
-  opacity: 0.7;
-}
-.navbar__bar {
+.navbar__bar{
   display: none;
 }
-@media (max-width: 1000px) {
-  .navbar__logo {
-    padding-inline-start: 100px;
-  }
-  .navbar__menu {
-    width: 700px;
-    padding: 0;
-    margin: 0;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-  }
-  .navbar__menu__items {
-    display: flex;
-    gap: 40px;
-    margin-right: auto;
-    padding-inline-start: 40px;
-  }
-  .login {
-    padding-inline-start: 40px;
-    margin-right: auto;
-  }
+.navbar__menu{
+  height: auto;
 }
-@media (max-width: 980px) {
-  .navbar {
-    max-width: 70vw;
-    display: flex;
-    justify-content: space-between;
-  }
-  .navbar__logo {
-    padding: 0;
-    margin: 0;
-  }
-  .navbar__bar {
+.navbar__menu__item{
+  text-decoration: none;
+  display: inline-block;
+  color: #8E8D90;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-inline-end: 15px;
+  padding-block-end: 8px;
+  position: relative;
+  transition: color .3s linear;
+  -webkit-transition:;
+  -moz-transition:;
+  -ms-transition:;
+  -o-transition:;
+}
+.active,.navbar__menu__item:hover{
+  color: #fa8601;
+}
+.navbar__menu__item::before{
+  content: "";
+  height: 4px;
+  width: 0%;
+  background-color: #fa8601;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 1s linear;
+  -webkit-transition:;
+  -moz-transition:;
+  -ms-transition:;
+  -o-transition:;
+}
+.navbar__menu__item:hover::before, .active::before{
+  width: 70%;
+}
+.login__btn{
+  color: #fff;
+  background-color: #fa8601;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-block-start: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+@media(max-width:800px){
+  .navbar__bar{
     display: block;
   }
-  .navbar__bar__icon {
-    font-size: 25px;
-  }
-  .navbar__menu {
-    border-top: 4px #fa8601 solid;
-    margin-top: 60px;
-    margin-left: 120px;
-    max-width: 70vw;
-    position: relative;
-    display: none !important;
-}
-.navbar__menu.active {
-      border-top: 4px #fa8601 solid;
-    display: block !important;
-  }
-  .navbar__menu,
-  .navbar__menu__items {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    gap: 0;
-  }
-  .login {
-    position: absolute;
-    top: 280px;
-    left: -15px;
-  }
-  .login__btn,
-  .active,
-  .navbar__menu__item {
-    border: none;
-    background-color: #fff;
-    color: rgba(0, 0, 0, 0.6);
-  }
-  .navbar__menu__item:hover,
-  .active:hover {
-    opacity: 0.7;
-  }
+  .lo
 }
