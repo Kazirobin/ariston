@@ -85,9 +85,7 @@ section {
 .navbar__menu {
   padding-inline: 25px;
 }
-.navbar__menu.active{
-  display: block;
-}
+
 .navbar__bar {
   display: none;
 }
@@ -161,6 +159,7 @@ section {
     position: relative;
     width: 100%;
   }
+
   .navbar__logo {
     display: flex;
     justify-content: space-between;
@@ -169,11 +168,13 @@ section {
   .navbar__menu {
     border-top: 4px #fa8601 solid;
     padding-block: 50px;
-    display: none;
     position: absolute;
     top: 90px;
     width: 88%;
     margin-right: 20px;
+  }
+  .navbar__menu.active{
+    display: none;
   }
   .navbar__bar {
     display: inline-block;
